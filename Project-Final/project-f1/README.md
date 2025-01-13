@@ -1,134 +1,154 @@
-Formula 1 Lap Times Analysis
-This Python project analyzes lap times from Formula 1 Grand Prix practice sessions. The program processes multiple JSON files containing lap times, identifies the fastest drivers, and saves detailed analysis logs for each race.
+# Formula 1 Lap Times Analyzer
 
-Features
-Process Multiple Files: Analyzes lap times from multiple JSON files (lap_times_1.json, lap_times_2.json, lap_times_3.json).
-Driver Details: Incorporates driver information (names and teams) from f1_drivers.json.
-Detailed Analysis:
-Fastest driver and lap time overall.
-Fastest and average lap times for each driver.
-Formatted Output: Displays results in a neat table format using the tabulate library.
-Log Files: Saves analysis results to separate JSON logs for each race.
-Requirements
-Python 3.7 or later
-Installed Python modules:
-json
-tabulate (install with pip install tabulate)
-Files
-Input Files
-f1_drivers.json: Contains driver details, including their codes, names, and teams. Example:
+Welcome to the **Formula 1 Lap Times Analyzer**! This project is designed to analyze lap times of F1 drivers during a Grand Prix and provide insights into their performance. The program processes lap time data, identifies the fastest driver, and generates comprehensive reports and visualizations.
 
-json
-Copy code
+---
+
+## **Features**
+
+### **1. Lap Time Analysis**
+- Reads lap time data from JSON files.
+- Identifies the fastest driver and their best lap time.
+- Computes average lap times for each driver.
+
+### **2. Driver Details Integration**
+- Fetches driver details (name, team) from an external JSON file.
+- Displays enriched data about each driver, including their fastest and average lap times.
+
+### **3. Results Visualization**
+- Plots lap time trends for all drivers in a Grand Prix.
+- Clear and intuitive line chart to compare performance.
+
+### **4. Comprehensive Reports**
+- Saves detailed analysis results in a JSON log file.
+- Outputs a formatted table of results in the console.
+
+---
+
+## **How It Works**
+
+### **1. Data Loading**
+- **Driver Details**: Loaded from `f1_drivers.json`, which contains driver codes, names, and team information.
+- **Lap Times**: Parsed from a JSON file containing lap times and the Grand Prix location.
+
+### **2. Lap Time Analysis**
+- Computes the fastest and average lap times for each driver.
+- Identifies the overall fastest driver of the session.
+
+### **3. Reporting**
+- Displays results in a formatted table with driver details, fastest lap times, and average lap times.
+- Saves a detailed JSON report to a file.
+
+### **4. Visualization**
+- Generates a line plot for lap times, showing performance trends for each driver during the session.
+
+---
+
+## **Getting Started**
+
+### **Prerequisites**
+- Python 3.x
+- Required libraries: `matplotlib`, `tabulate`
+
+Install the dependencies using:
+```bash
+pip install matplotlib tabulate
+```
+
+### **Setup Instructions**
+1. Clone or download this repository.
+2. Ensure the following JSON files are present:
+   - `f1_drivers.json`: Contains driver codes, names, and team information.
+   - Lap times JSON file (e.g., `lap_times.json`): Contains lap times and Grand Prix location.
+
+### **Running the Program**
+1. Execute the main script in your terminal:
+   ```bash
+   python lap_time_analyzer.py
+   ```
+2. Follow the console outputs to view results and locate saved reports.
+
+---
+
+## **File Structure**
+- **lap_time_analyzer.py**: Main script for analyzing lap times.
+- **f1_drivers.json**: JSON file containing driver details.
+- **lap_times.json**: Example lap times data file.
+- **results_log.json**: Generated JSON file containing analysis results (created after execution).
+
+---
+
+## **Example JSON Files**
+
+### `f1_drivers.json`
+```json
 {
     "HAM": {"name": "Lewis Hamilton", "team": "Mercedes"},
     "VER": {"name": "Max Verstappen", "team": "Red Bull Racing"},
-    "NOR": {"name": "Lando Norris", "team": "McLaren"}
+    "LEC": {"name": "Charles Leclerc", "team": "Ferrari"}
 }
-Lap Times Files: JSON files containing lap times for multiple Grand Prix events:
+```
 
-lap_times_1.json
-lap_times_2.json
-lap_times_3.json
-Each file should follow this format:
-
-json
-Copy code
+### `lap_times.json`
+```json
 {
-    "grand_prix_location": "Monaco",
+    "grand_prix_location": "Monza",
     "lap_times": {
-        "HAM": [98.123, 100.456, 101.789],
-        "VER": [99.456, 102.345, 100.678],
-        "NOR": [100.123, 101.456, 102.789]
+        "HAM": [77.321, 77.654, 77.452],
+        "VER": [76.987, 77.125, 76.945],
+        "LEC": [78.102, 77.998, 78.231]
     }
 }
-Output Files
-lap_times_1_log.json, lap_times_2_log.json, lap_times_3_log.json: Detailed analysis logs saved in JSON format.
-Usage
-1. Clone the Repository
-Download or clone the repository to your local machine.
+```
 
-bash
-Copy code
-git clone https://github.com/your-repo/f1-lap-times.git
-cd f1-lap-times
-2. Install Dependencies
-Install the required Python modules using pip:
+---
 
-bash
-Copy code
-pip install tabulate
-3. Run the Program
-Run the program from the command line:
+## **Demo**
 
-bash
-Copy code
-python main.py
-The program will:
+### Console Output
+Displays results in a neat table format:
+```
++------+-----------------+----------------+--------------+---------------+
+| Code | Name            | Team           | Fastest Time | Average Time  |
++------+-----------------+----------------+--------------+---------------+
+| VER  | Max Verstappen  | Red Bull Racing| 76.945       | 77.019        |
+| HAM  | Lewis Hamilton  | Mercedes       | 77.321       | 77.476        |
+| LEC  | Charles Leclerc | Ferrari        | 77.998       | 78.110        |
++------+-----------------+----------------+--------------+---------------+
+```
 
-Process each file (lap_times_1.json, lap_times_2.json, lap_times_3.json).
-Display results in the console.
-Save logs to JSON files (e.g., lap_times_1_log.json).
-Example Output
-Console Output:
-plaintext
-Copy code
-Processing file: lap_times_1.json
+### Plot
+Generates a line chart showing lap time trends for all drivers.
 
-Grand Prix Location: Monaco Grand Prix
+---
 
-Fastest Driver Overall: HAM with a time of 98.123 seconds
+## **Contributing**
+We welcome contributions! To add features or fix issues:
+1. Fork this repository.
+2. Create a feature branch:
+   ```bash
+   git checkout -b feature/YourFeatureName
+   ```
+3. Commit your changes and push them:
+   ```bash
+   git commit -m "Added YourFeatureName"
+   git push origin feature/YourFeatureName
+   ```
+4. Submit a pull request.
 
-+------+-------------------+------------------+---------------+---------------+
-| Code | Name              | Team             | Fastest Time  | Average Time  |
-+------+-------------------+------------------+---------------+---------------+
-| HAM  | Lewis Hamilton    | Mercedes         | 98.123        | 100.456       |
-| VER  | Max Verstappen    | Red Bull Racing  | 99.456        | 101.789       |
-| NOR  | Lando Norris      | McLaren          | 100.123       | 102.345       |
-+------+-------------------+------------------+---------------+---------------+
+---
 
-Results have been saved to 'lap_times_1_log.json'.
-Log File (lap_times_1_log.json):
-json
-Copy code
-{
-    "grand_prix_location": "Monaco",
-    "fastest_driver": "HAM",
-    "fastest_time": 98.123,
-    "driver_details": [
-        {
-            "code": "HAM",
-            "name": "Lewis Hamilton",
-            "team": "Mercedes",
-            "fastest_time": 98.123,
-            "average_time": 100.456
-        },
-        {
-            "code": "VER",
-            "name": "Max Verstappen",
-            "team": "Red Bull Racing",
-            "fastest_time": 99.456,
-            "average_time": 101.789
-        },
-        {
-            "code": "NOR",
-            "name": "Lando Norris",
-            "team": "McLaren",
-            "fastest_time": 100.123,
-            "average_time": 102.345
-        }
-    ]
-}
-Troubleshooting
-Missing Files: Ensure f1_drivers.json and all lap_times_X.json files are in the same directory as main.py.
+## **License**
+This project is licensed under the MIT License. You are free to use, modify, and distribute it.
 
-Missing Dependencies: Install missing dependencies using:
+---
 
-bash
-Copy code
-pip install tabulate
-File Format Errors: Verify the JSON files are properly formatted.
+## **Contact**
+For questions or feedback, reach out to [Your Contact Information].
 
-Author
-Gaurav Adhikari
-adhikarygaurav99@gmail.com
+---
+
+🏎️
+
+Auther Gaurav Adhikari
+Email adhikarygaurav99@gmail.com
