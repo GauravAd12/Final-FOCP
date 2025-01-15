@@ -116,6 +116,11 @@ Displays results in a neat table format:
 | LEC  | Charles Leclerc | Ferrari        | 77.998       | 78.110        |
 +------+-----------------+----------------+--------------+---------------+
 ```
+Main output visual form
+![image](https://github.com/user-attachments/assets/b7557401-c49a-4a60-80db-388e345f360b)
+Fast Time vs Average time
+![image](https://github.com/user-attachments/assets/96c5eee9-3d06-465c-8ec7-c86834edaa6d)
+
 
 ### Plot
 Generates a line chart showing lap time trends for all drivers.
