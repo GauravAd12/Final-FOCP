@@ -1,4 +1,4 @@
-# Chatbot Application
+# Chatbot Application.
 
 Welcome to the **Chatbot Application**! This is an interactive, GUI-based chatbot program designed to simulate a conversational assistant. Built with Python and PyQt5, it is both engaging and user-friendly, with a simple yet effective design. Here's everything you need to know about the application.
 
