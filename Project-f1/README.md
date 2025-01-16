@@ -117,11 +117,19 @@ Displays results in a neat table format:
 +------+-----------------+----------------+--------------+---------------+
 ```
 Main output visual form
+
 ![image](https://github.com/user-attachments/assets/b7557401-c49a-4a60-80db-388e345f360b)
 Fast Time vs Average time
+
 ![image](https://github.com/user-attachments/assets/96c5eee9-3d06-465c-8ec7-c86834edaa6d)
 lap-times2 visual
-![alt text](image.png)
+
+![image](https://github.com/user-attachments/assets/50b5f44c-c580-413c-9ace-efc5d7aa368a)
+lap-times3 York
+
+![image](https://github.com/user-attachments/assets/d765b956-f891-4187-a0d1-c9c920301d7d)
+
+
 
 
 ### Plot
