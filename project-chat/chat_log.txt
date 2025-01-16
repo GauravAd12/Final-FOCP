@@ -1,0 +1,58 @@
+Gaurav: name
+Jordan: Tell me more!
+Gaurav: what are you doing
+Jordan: Can you rephrase that?
+Gaurav: coffee
+Jordan: The campus coffee bar is open from 8 AM to 8 PM.
+Gaurav: country
+Jordan: That's interesting!
+Gaurav: admission
+Jordan: Admissions are open until the end of the month.
+Gaurav: thanku
+Jordan: Oops! I seem to have disconnected.
+You: coffee
+Sam: The campus coffee bar is open from 8 AM to 8 PM.
+You: course
+Sam: Tell me more!
+You: courses
+Sam: We offer a wide range of courses. Visit our website for more details.
+You: bye
+Sam: Goodbye dibas! Have a great day!
+You: coffee
+Sam: The campus coffee bar is open from 8 AM to 8 PM.
+You: by
+Sam: Tell me more!
+You: exit
+Sam: Goodbye admin! Have a great day!
+Gaurav: coffee
+Sam: The campus coffee bar is open from 8 AM to 8 PM.
+Gaurav: admission
+Sam: Admissions are open until the end of the month.
+Gaurav: how are you
+Sam: I'm not sure about that.
+Gaurav: by
+Sam: Can you rephrase that?
+Gaurav: goodby
+Sam: Can you rephrase that?
+Gaurav: exit
+Sam: Goodbye Gaurav! Have a great day!
+You: cofee
+harry: Tell me more!
+You: coffee
+harry: The campus coffee bar is open from 8 AM to 8 PM.
+You: addmission
+harry: Tell me more!
+You: admission
+harry: Admissions are open until the end of the month.
+You: exit
+harry: Goodbye User! Have a great day!
+You: admission
+Sam: Admissions are open until the end of the month.
+You: coffee
+Sam: The campus coffee bar is open from 8 AM to 8 PM.
+You: library
+Sam: The library is open from 9 AM to 10 PM every day.
+You: Goodby
+Sam: That's interesting!
+You: exit
+Sam: Goodbye User! Have a great day!
