@@ -1,51 +1,46 @@
-# Chatbot Application
+# Formula 1 Lap Times Analyzer
 
-Welcome to the **Chatbot Application**! This is an interactive, GUI-based chatbot program designed to simulate a conversational assistant. Built with Python and PyQt5, it is both engaging and user-friendly, with a simple yet effective design. Here's everything you need to know about the application.
+Welcome to the **Formula 1 Lap Times Analyzer**! This project is designed to analyze lap times of F1 drivers during a Grand Prix and provide insights into their performance. The program processes lap time data, identifies the fastest driver, and generates comprehensive reports and visualizations.
 
 ---
 
 ## **Features**
 
-### 1. **Dynamic Conversations**
-- Responds to user input based on predefined keywords.
-- Includes random responses to keep conversations engaging and fresh.
+### **1. Lap Time Analysis**
+- Reads lap time data from JSON files.
+- Identifies the fastest driver and their best lap time.
+- Computes average lap times for each driver.
 
-### 2. **Personalized Chat**
-- The chatbot greets you by your name and remembers it throughout the session.
-- Uses a randomly generated agent name to make interactions feel more human.
+### **2. Driver Details Integration**
+- Fetches driver details (name, team) from an external JSON file.
+- Displays enriched data about each driver, including their fastest and average lap times.
 
-### 3. **Realism**
-- Introduces a 5% chance of random disconnection to simulate real-life challenges.
+### **3. Results Visualization**
+- Plots lap time trends for all drivers in a Grand Prix.
+- Clear and intuitive line chart to compare performance.
 
-### 4. **Graphical User Interface (GUI)**
-- Built with PyQt5 for an intuitive and responsive interface.
-- Includes:
-  - A chat display for viewing conversations.
-  - An input field for typing messages.
-  - A send button for ease of use.
-
-### 5. **Chat History Logging**
-- Saves the chat log to a text file (`chat_log.txt`) for later reference.
+### **4. Comprehensive Reports**
+- Saves detailed analysis results in a JSON log file.
+- Outputs a formatted table of results in the console.
 
 ---
 
 ## **How It Works**
 
-### **1. Initialization**
-- Loads predefined responses from a `responses.json` file.
-- Generates a random agent name from a list.
+### **1. Data Loading**
+- **Driver Details**: Loaded from `f1_drivers.json`, which contains driver codes, names, and team information.
+- **Lap Times**: Parsed from a JSON file containing lap times and the Grand Prix location.
 
-### **2. User Interaction**
-- Starts with a welcome message and asks for your name.
-- Handles input dynamically, checking for keywords, random responses, or exit commands.
+### **2. Lap Time Analysis**
+- Computes the fastest and average lap times for each driver.
+- Identifies the overall fastest driver of the session.
 
-### **3. Response Mechanism**
-- Matches keywords in the input to provide predefined responses.
-- Defaults to random responses if no match is found.
+### **3. Reporting**
+- Displays results in a formatted table with driver details, fastest lap times, and average lap times.
+- Saves a detailed JSON report to a file.
 
-### **4. Exit and Save**
-- Ends the session when you type "bye," "quit," or "exit."
-- Logs the conversation to `chat_log.txt` before closing.
+### **4. Visualization**
+- Generates a line plot for lap times, showing performance trends for each driver during the session.
 
 ---
 
@@ -53,77 +48,122 @@ Welcome to the **Chatbot Application**! This is an interactive, GUI-based chatbo
 
 ### **Prerequisites**
 - Python 3.x
-- PyQt5 library
+- Required libraries: `matplotlib`, `tabulate`
+
+Install the dependencies using:
+```bash
+pip install matplotlib tabulate
+```
 
 ### **Setup Instructions**
 1. Clone or download this repository.
-2. Ensure Python 3.x is installed on your system.
-3. Install PyQt5 by running:
-   ```bash
-   pip install pyqt5
-   ```
-4. Place your `responses.json` file in the same directory as the script. The file should contain a dictionary of keywords and responses in the following format:
-   ```json
-   {
-       "hello": "Hi there! How can I assist you?",
-       "help": "Sure! What do you need help with?",
-       "random": [
-           "I'm here to chat!",
-           "Can you tell me more?",
-           "Interesting!"
-       ]
-   }
-   ```
+2. Ensure the following JSON files are present:
+   - `f1_drivers.json`: Contains driver codes, names, and team information.
+   - Lap times JSON file (e.g., `lap_times.json`): Contains lap times and Grand Prix location.
 
-### **Running the Application**
-1. Open a terminal in the project directory.
-2. Run the following command:
+### **Running the Program**
+1. Execute the main script in your terminal:
    ```bash
-   python chatbot.py
+   python lap_time_analyzer.py
    ```
-3. Interact with the chatbot through the GUI.
+2. Follow the console outputs to view results and locate saved reports.
 
 ---
 
 ## **File Structure**
-- **chatbot.py**: Main application file.
-- **responses.json**: JSON file containing predefined keywords and responses.
-- **chat_log.txt**: File where chat logs are saved (created after first run).
+- **lap_time_analyzer.py**: Main script for analyzing lap times.
+- **f1_drivers.json**: JSON file containing driver details.
+- **lap_times.json**: Example lap times data file.
+- **results_log.json**: Generated JSON file containing analysis results (created after execution).
+
+---
+
+## **Example JSON Files**
+
+### `f1_drivers.json`
+```json
+{
+    "HAM": {"name": "Lewis Hamilton", "team": "Mercedes"},
+    "VER": {"name": "Max Verstappen", "team": "Red Bull Racing"},
+    "LEC": {"name": "Charles Leclerc", "team": "Ferrari"}
+}
+```
+
+### `lap_times.json`
+```json
+{
+    "grand_prix_location": "Monza",
+    "lap_times": {
+        "HAM": [77.321, 77.654, 77.452],
+        "VER": [76.987, 77.125, 76.945],
+        "LEC": [78.102, 77.998, 78.231]
+    }
+}
+```
 
 ---
 
 ## **Demo**
-### Chat Interface
-- Displays the conversation in a clear, readable format.
-- Includes a text input field and a send button.
 
-![Chatbot GUI Screenshot](#) *(Add screenshot if available)*
+### Console Output
+Displays results in a neat table format:
+```
++------+-----------------+----------------+--------------+---------------+
+| Code | Name            | Team           | Fastest Time | Average Time  |
++------+-----------------+----------------+--------------+---------------+
+| VER  | Max Verstappen  | Red Bull Racing| 76.945       | 77.019        |
+| HAM  | Lewis Hamilton  | Mercedes       | 77.321       | 77.476        |
+| LEC  | Charles Leclerc | Ferrari        | 77.998       | 78.110        |
++------+-----------------+----------------+--------------+---------------+
+```
+Main output visual form
+
+![image](https://github.com/user-attachments/assets/b7557401-c49a-4a60-80db-388e345f360b)
+Fast Time vs Average time
+
+![image](https://github.com/user-attachments/assets/96c5eee9-3d06-465c-8ec7-c86834edaa6d)
+lap-times2 visual
+
+![image](https://github.com/user-attachments/assets/50b5f44c-c580-413c-9ace-efc5d7aa368a)
+lap-times3 York
+
+![image](https://github.com/user-attachments/assets/d765b956-f891-4187-a0d1-c9c920301d7d)
+
+
+
+
+### Plot
+Generates a line chart showing lap time trends for all drivers.
 
 ---
 
 ## **Contributing**
-We welcome contributions! If you'd like to improve this chatbot or add new features, follow these steps:
-1. Fork the repository.
+We welcome contributions! To add features or fix issues:
+1. Fork this repository.
 2. Create a feature branch:
    ```bash
    git checkout -b feature/YourFeatureName
    ```
-3. Commit your changes and push them to your fork.
-4. Open a pull request.
+3. Commit your changes and push them:
+   ```bash
+   git commit -m "Added YourFeatureName"
+   git push origin feature/YourFeatureName
+   ```
+4. Submit a pull request.
 
 ---
 
 ## **License**
-This project is licensed under the MIT License. Feel free to use, modify, and distribute it as per the license terms.
+This project is licensed under the MIT License. You are free to use, modify, and distribute it.
 
 ---
 
 ## **Contact**
-If you have any questions or feedback, feel free to reach out via [Your Contact Information].
-Auther Gaurav Adhikari
-Email adhikarygaurav99@gmai.com
+For questions or feedback, reach out to [Your Contact Information].
 
 ---
 
+🏎️
 
-
+Auther Gaurav Adhikari
+Email adhikarygaurav99@gmail.com
