@@ -98,6 +98,8 @@ Welcome to the **Chatbot Application**! This is an interactive, GUI-based chatbo
 - Includes a text input field and a send button.
 
 ![Chatbot GUI Screenshot](#) *(Add screenshot if available)*
+![image](https://github.com/user-attachments/assets/641c6083-b28c-48dc-be24-025972511c90)
+
 
 ---
 
