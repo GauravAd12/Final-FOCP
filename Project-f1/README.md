@@ -1,4 +1,4 @@
-# Formula 1 Lap Times Analyzer
+# Formula 1 Lap Times Analyzer.
 
 Welcome to the **Formula 1 Lap Times Analyzer**! This project is designed to analyze lap times of F1 drivers during a Grand Prix and provide insights into their performance. The program processes lap time data, identifies the fastest driver, and generates comprehensive reports and visualizations.
 
